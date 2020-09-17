@@ -66,6 +66,14 @@ describe 'Blackjack Score' do
   end
 
   it 'raises an ArgumentError for invalid cards' do
+    #Arrange
+    hand = ["Ace", "Queen", "King", "fleventy-five"]
+
+
+
+    #Act-Assert
+    expect(blackjack_score(hand)).must_raise ArgumentError
+
 
   end
 
