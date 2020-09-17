@@ -72,12 +72,25 @@ describe 'Blackjack Score' do
 
 
     #Act-Assert
-    expect(blackjack_score(hand)).must_raise ArgumentError
+    expect{blackjack_score(hand)}.must_raise ArgumentError
 
 
   end
 
   it 'raises an ArgumentError for scores over 21' do
+    #Arrange
+    hand = ["Ace", "Queen", "King", 5]
 
+    #Act-Assert
+    expect{blackjack_score(hand)}.must_raise ArgumentError
+
+  end
+
+  it "raises an ArgumentError for a hand with more than 5 cards" do
+    #Arrange
+    hand = [4,5,6,7,8,9]
+
+    #Act-Assert
+    expect{blackjack_score(hand)}.must_raise ArgumentError
   end
 end
